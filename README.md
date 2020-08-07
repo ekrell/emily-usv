@@ -105,11 +105,9 @@ Create two channel mixes:
 ![channel mixes](https://ekrell.github.io/images/20200628_3.jpg)
 
 Channel mix 1:
-
 ![mix 1](https://ekrell.github.io/images/20200628_2.jpg)
 
 Channel mix 2:
-
 ![mix 2](https://ekrell.github.io/images/20200628_1.jpg)
 
 
