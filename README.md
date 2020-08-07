@@ -35,3 +35,6 @@ This manual describes how to add autonomous capability to a standard [EMILY USV]
 ## Hardware integration
 
 Section coming soon? 
+
+1. I need to study the wiring, since I did not do this part
+2. Since [CRASAR](http://crasar.org/) did this, I’m not just assuming I can share it. That said, you can figure it out from the [Pixhawk Mini wiring quick start](https://madennis.gitbooks.io/px4user/content/en/assembly/quick_start_pixhawk_mini.html).
