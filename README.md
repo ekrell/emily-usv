@@ -91,6 +91,7 @@ Follow the [getting started guide](https://ardupilot.org/rover/docs/apmrover-set
 Initially, I found that the roll and yaw were reversed. I first fixed it by setting parameters `RC1_REVERSED` and `RC3_REVERSED`. However, I did not like doing this since I was not sure what downstream effects this would have on the autonomy. It seems like it is better if everything is normal and default on the controller and corrected on the RC transmitter. Its trivial to do on the Spektrum DX8, but only if you realize that clicking on Travel within the Control Setup screen allows scrolling through different options to setup.
 
 `Function List` → `Control Setup` → `Reverse` → Flip the direction on ROL and YAW.
+
 ![Reverse Spektrum roll, yaw](https://ekrell.github.io/images/20200628_4.jpg)
 
 #### Flight Modes
@@ -99,6 +100,7 @@ Initially, I found that the roll and yaw were reversed. I first fixed it by sett
 
 ArduPilot allows you to associate switch positions on the transmitter with flight modes (i.e. manual, hold, auto, …). There are six slots available to set, but the most choices available on any Spektrum DX8 switch are three. At first, I thought you would use one switch to cycle between three and a second switch to cycle between the remaining three. However, how would it disambiguate which mode to be in with two active switches? So, I found that the recommended way to enable all six is to use a two-option switch to select with half are available to the three-option switch. So, you end up with 2x3 equals six options. The setup is a bit convoluted, but I followed the steps in the [ArduRover documentation](https://ardupilot.org/rover/docs/common-rc-transmitter-flight-mode-configuration.html#spektrum-dx8-alternate-method) and it worked. Not all the words were identical between the documentation and my transmitter, but it was easy enough to guess at what to do.
 Basically, you use channel mixing which allows one channel to control another. So, you setup the GEAR stick (switch A) to behave differently (output different signals) depending on the Flight Mode stick position (switch B).
+
 Create two channel mixes:
 ![channel mixes](https://ekrell.github.io/images/20200628_3.jpg)
 
@@ -109,6 +111,7 @@ Channel mix 1:
 Channel mix 2:
 
 ![mix 2](https://ekrell.github.io/images/20200628_1.jpg)
+
 
 #### Power
 
