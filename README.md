@@ -8,6 +8,13 @@ Data and parameters of an EMILY USV
 
 This manual describes how to add autonomous capability to a standard [EMILY USV](https://www.emilyrobot.com/). This configuration has been called “Smart EMILY”. It uses a [Pixhawk Mini](https://docs.px4.io/v1.9.0/en/flight_controller/pixhawk_mini.html) flight controller with [ArduRover](https://ardupilot.org/rover/) autopilot software system. This text is a work-in-progress, since we are continually testing and improving the configuration. Follow-up documents will describe how to integrate various sensors and additional capabilities. Here, the basic setup required for waypoint-following autonomy is presented.
 
+## Outstanding issues
+
+1. Poor telemetry range with SiK radios. Rarely achieve ~350 ft., ~200 ft. typical, sometimes < 20 ft! Long-range [RDF900+](https://ardupilot.org/copter/docs/common-rfd900.html) on the way. 
+2. Long delay to recover from GCS connection loss. `Initializing APM... EKF error... EKF failsafe... EKF failsafe cleared`. 
+3. Despite setting `FS_ACTION` to `RTL`, always enters `Hold` on communication loss.
+4. Unsure about voltage monitoring. See "Power" section below.
+
 ## Required materials
 
 **Vehicle**
