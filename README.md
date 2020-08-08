@@ -105,7 +105,7 @@ Initially, I found that the roll and yaw were reversed. I first fixed it by sett
 
 ![Setup RC transmitter](images/setup_fmodes.png)
 
-ArduPilot allows you to associate switch positions on the transmitter with flight modes (i.e. manual, hold, auto, …). There are six slots available to set, but the most choices available on any Spektrum DX8 switch are three. At first, I thought you would use one switch to cycle between three and a second switch to cycle between the remaining three. However, how would it disambiguate which mode to be in with two active switches? So, I found that the recommended way to enable all six is to use a two-option switch to select with half are available to the three-option switch. So, you end up with 2x3 equals six options. The setup is a bit convoluted, but I followed the steps in the [ArduRover documentation](https://ardupilot.org/rover/docs/common-rc-transmitter-flight-mode-configuration.html#spektrum-dx8-alternate-method) and it worked. Not all the words were identical between the documentation and my transmitter, but it was easy enough to guess at what to do.
+ArduPilot allows you to associate switch positions on the transmitter with flight modes (i.e. `Manual`, `Hold`, `Auto`, …). There are six slots available to set, but the most choices available on any Spektrum DX8 switch are three. At first, I thought you would use one switch to cycle between three and a second switch to cycle between the remaining three. However, how would it disambiguate which mode to be in with two active switches? So, I found that the recommended way to enable all six is to use a two-option switch to select with half are available to the three-option switch. So, you end up with 2x3 equals six options. The setup is a bit convoluted, but I followed the steps in the [ArduRover documentation](https://ardupilot.org/rover/docs/common-rc-transmitter-flight-mode-configuration.html#spektrum-dx8-alternate-method) and it worked. Not all the words were identical between the documentation and my transmitter, but it was easy enough to guess at what to do.
 Basically, you use channel mixing which allows one channel to control another. So, you setup the GEAR stick (switch A) to behave differently (output different signals) depending on the Flight Mode stick position (switch B).
 
 Create two channel mixes:
@@ -134,7 +134,7 @@ In the `parameters` tab, additional parameters are set with manual value input.
 
 	ARMING_CHECK          None
 
- **Set communiction failsafe behaviors.** Communication failsafes can occur from loss of RC transmitter and from loss of GCS telemetry. Failsafe actions determine what the vehicle will do when a loss of communication is detected. The parameter `FS_ACTION` controls communication loss and  `FS_GCS_ENABLE` applies the failsafe to GCS telemetry (and not just RC). I want to vehicle to return-to-launch (RTL) on loss, and the following settings should do so. However, I have found that the vehicle **always enters hold mode whenever anything problematic occurs**. 
+ **Set communiction failsafe behaviors.** Communication failsafes can occur from loss of RC transmitter and from loss of GCS telemetry. Failsafe actions determine what the vehicle will do when a loss of communication is detected. The parameter `FS_ACTION` controls communication loss and  `FS_GCS_ENABLE` applies the failsafe to GCS telemetry (and not just RC). I want to vehicle to return-to-launch (RTL) on loss, and the following settings should do so. However, I have found that the vehicle **always enters `Hold` mode whenever anything problematic occurs**. 
 
 	FS_ACTION          RTL
 	FS_GCS_ENABLE      Enabled
@@ -143,7 +143,7 @@ In the `parameters` tab, additional parameters are set with manual value input.
 
 	LOG_REPLAY          Enabled
 
-**Set behavior for when mission is completed**. The default is to `hold` when a mission is completed, but the boat will start drifting. Instead, set it to `loiter` to maintain the position. 
+**Set behavior for when mission is completed**. The default is to `Hold` when a mission is completed, but the boat will start drifting. Instead, set it to `loiter` to maintain the position. 
 
 	MIS_DONE_BEHAVE          Loiter
 
