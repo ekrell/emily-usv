@@ -10,10 +10,10 @@ This manual describes how to add autonomous capability to a standard [EMILY USV]
 
 ## Outstanding issues
 
-1. Poor telemetry range with SiK radios. Rarely achieve ~350 ft., ~200 ft. typical, sometimes < 20 ft! Long-range [RDF900+](https://ardupilot.org/copter/docs/common-rfd900.html) on the way. 
+1. Poor telemetry range with [SiK radios](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html). Rarely achieve ~350 ft., ~200 ft. typical, sometimes < 20 ft! Long-range [RDF900+](https://ardupilot.org/copter/docs/common-rfd900.html) on the way. 
 2. Long delay to recover from GCS connection loss. `Initializing APM... EKF error... EKF failsafe... EKF failsafe cleared`. 
 3. Despite setting `FS_ACTION` to `RTL`, always enters `Hold` on communication loss.
-4. Unsure about voltage monitoring. See "Power" section below.
+4. Unsure about voltage monitoring. See **Power** section below.
 
 ## Required materials
 
