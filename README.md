@@ -137,7 +137,7 @@ In the `parameters` tab, additional parameters are set with manual value input.
  **Set communiction failsafe behaviors.** Communication failsafes can occur from loss of RC transmitter and from loss of GCS telemetry. Failsafe actions determine what the vehicle will do when a loss of communication is detected. The parameter `FS_ACTION` controls communication loss and  `FS_GCS_ENABLE` applies the failsafe to GCS telemetry (and not just RC). I want to vehicle to return-to-launch (RTL) on loss, and the following settings should do so. However, I have found that the vehicle **always enters hold mode whenever anything problematic occurs**. 
 
 	FS_ACTION          RTL
-	FS_GCS_ENABLE          Enabled
+	FS_GCS_ENABLE      Enabled
 
 **Set collection of log replay data**. With this enabled, you can replay logs within the GCS. I haven’t tried it yet, but I think I can use this to playback the actual movement of the vehicle on the map. I plan to use this for videos where the main video is the boat but the GCS screen is in the corner. 
 
@@ -150,7 +150,7 @@ In the `parameters` tab, additional parameters are set with manual value input.
 **Tuning the controller*. See controller tuning section for details. These settings worked to achieve decent path following behavior, as shown. 
 
 	ATC_STR_ANG_P          1.0
-	ATC_STR_RAT_P           0.5
+	ATC_STR_RAT_P          0.5
 	ATC_STR_RAT_FF         1.0
 
 ![PID tuning](https://ekrell.github.io/images/20200719_C.png)
